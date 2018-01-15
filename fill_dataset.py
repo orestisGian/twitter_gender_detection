@@ -173,7 +173,7 @@ with open(dataset_name+'.csv', 'ab') as csvfile:
     	#testing with a few users
     	count +=1
     	print count
-    	if count==15:
+    	if count==500:
     		break
     	
 		#TODO:kanei request sto tweepy gia aytous pou den htan prosvasimoi kathe fora pou ksanaksekinaei h diadikasia
