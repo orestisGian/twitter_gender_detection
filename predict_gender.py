@@ -247,15 +247,15 @@ predictions = []
 for i in xrange(len(predicted_hybrid_prob)):
 	user = {}
 	user['ID'] = IDs[i]
-	if math.isnan(predicted_face_prob[i][0]) or math.isnan(predicted_face_prob[i][1]):
+	if math.isnan(predicted_hybrid_prob[i][0]) or math.isnan(predicted_hybrid_prob[i][1]):
 		user['gender'] = 'female'
 		user['probability'] = 0.5
-	if predicted_face_prob[i][0] >= predicted_face_prob[i][1]:
+	if predicted_hybrid_prob[i][0] >= predicted_hybrid_prob[i][1]:
 		user['gender'] = 'female'
-		user['probability'] = predicted_face_prob[i][0]
+		user['probability'] = round(predicted_hybrid_prob[i][0],4) 
 	else:
 		user['gender'] = 'male'
-		user['probability'] = predicted_face_prob[i][1]
+		user['probability'] = round(predicted_hybrid_prob[i][1],4) 
 	
 	predictions.append(user)
 		
